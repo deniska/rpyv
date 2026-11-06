@@ -1,4 +1,4 @@
-volatile char* IO_PORT;
+volatile char* IO_PORT = (char*) 40000000;
 
 void putchar(char ch) {
     *IO_PORT = ch;
@@ -12,6 +12,5 @@ void puts(char* s) {
 }
 
 void _start() {
-    IO_PORT = (char*) 40000000;
     puts("Hello world!\n");
 }

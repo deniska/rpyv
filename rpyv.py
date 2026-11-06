@@ -5,10 +5,8 @@ from vio import SimpleIO
 
 def main():
     mem = Memory(32*1024*1024)
-    high = Memory(32*1024*1024)
     m = MemoryMap([
         (0, mem),
-        (0xffffffff - len(high) + 1, high),
         (40000000, SimpleIO()),
         ])
     with open(sys.argv[1], 'rb') as f:
